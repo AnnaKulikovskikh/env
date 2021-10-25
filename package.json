@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "no",
   "main": "index.js",
+  "homepage" : "http://AnnaKulikovskikh.github.io/env",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
@@ -15,7 +16,8 @@
     "preshow:doc": "npm run doc",
     "show:doc": "live-server doc",
     "preshow:dist": "npm run build",
-    "show:dist": "live-server dist"
+    "show:dist": "live-server dist",
+    "deploy": "yarn run build&&gh-pages -d build"
   },
   "author": "Anna",
   "license": "MIT",
@@ -30,6 +32,7 @@
     "eslint": "^7.17.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "gh-pages": "^3.2.3",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.4.0",
     "jest": "^27.2.5",
