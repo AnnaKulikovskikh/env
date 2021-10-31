@@ -1,9 +1,3 @@
-version: 1.0.{build}
-environment:
-  GITHUB_TOKEN: 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
-build:
-  verbosity: minimal
-
 image: Ubuntu1804  # образ для сборки
 
 stack: node 10  # окружение
@@ -15,15 +9,15 @@ branches:
 cache: node_modules  # кеширование
 
 install:
-  - yarn add  # команда установки зависимостей
+  - npm install  # команда установки зависимостей
 
 build: off  # отключаем встроенную в appveyor систему сборки
 
 build_script:
-  - yarn run build   # команда сборки
+  - npm run build   # команда сборки
 
 test_script:
-  - yarn run lint && npm test  # скрипт тестирования
+  - npm run lint && npm test  # скрипт тестирования
 
 deploy_script:  # скрипт развёртывания
   - git config --global credential.helper store
